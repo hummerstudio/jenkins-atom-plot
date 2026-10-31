@@ -1,0 +1,90 @@
+{
+  "atomCode": "plot",
+  "name": "Plot",
+  "version": "1.0.0",
+  "description": "Draws CSV series into one self-contained SVG chart.",
+  "execution": {
+    "packagePath": "plot.jar",
+    "language": "java",
+    "target": "$atom_java_path -cp plot.jar com.jenkinschina.atom.sdk.AtomRunner"
+  },
+  "input": {
+    "pattern": {
+      "label": "CSV 文件（glob）",
+      "type": "vuex-input",
+      "default": "**/*.csv"
+    },
+    "title": {
+      "label": "图表标题",
+      "type": "vuex-input",
+      "default": "Plot"
+    },
+    "xColumn": {
+      "label": "X 列（列名或序号，默认第 0 列）",
+      "type": "vuex-input",
+      "default": ""
+    },
+    "yColumns": {
+      "label": "Y 列（逗号分隔，留空则除 X 外全部）",
+      "type": "vuex-input",
+      "default": ""
+    },
+    "yLabel": {
+      "label": "Y 轴标题",
+      "type": "vuex-input",
+      "default": ""
+    },
+    "outputFile": {
+      "label": "输出文件",
+      "type": "vuex-input",
+      "default": "out/plot/plot.svg"
+    },
+    "width": {
+      "label": "宽",
+      "type": "vuex-input",
+      "default": "720"
+    },
+    "height": {
+      "label": "高",
+      "type": "vuex-input",
+      "default": "420"
+    },
+    "skipNonNumeric": {
+      "label": "跳过非数字行（关闭则报错）",
+      "type": "checkbox",
+      "default": "true"
+    }
+  },
+  "output": {
+    "series": {
+      "type": "string",
+      "description": "系列数"
+    },
+    "points": {
+      "type": "string",
+      "description": "数据点数"
+    },
+    "skipped": {
+      "type": "string",
+      "description": "跳过的行数"
+    },
+    "minY": {
+      "type": "string",
+      "description": "Y 最小值"
+    },
+    "maxY": {
+      "type": "string",
+      "description": "Y 最大值"
+    },
+    "report": {
+      "type": "report",
+      "description": "构建页内嵌的 SVG 图"
+    }
+  },
+  "x-jenkins": {
+    "protocol": "jenkins-1",
+    "requires": {
+      "runner": ">=0.4.0"
+    }
+  }
+}

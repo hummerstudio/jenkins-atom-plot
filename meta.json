@@ -1,0 +1,12 @@
+{
+  "name": "Plot",
+  "summary": "Draws CSV series into one self-contained SVG chart.",
+  "author": "hummerstudio",
+  "license": "MIT",
+  "tags": [
+    "official-port",
+    "report",
+    "chart"
+  ],
+  "homepage": "https://github.com/hummerstudio/jenkins-atom-plot"
+}
